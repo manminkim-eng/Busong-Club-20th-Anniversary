@@ -353,14 +353,6 @@ a:hover{color:var(--gold)}
   font-size:11px;font-weight:800;letter-spacing:0.15em;
   z-index:2;
 }
-.ep-card-dday{
-  position:absolute;top:12px;right:12px;
-  background:var(--gold);color:var(--navy);
-  padding:4px 12px;border-radius:14px;
-  font-size:11px;font-weight:800;letter-spacing:0.05em;
-  z-index:2;
-}
-.ep-card-dday.released{background:#4ade80;}
 .ep-card-play{
   position:absolute;bottom:14px;right:14px;
   width:40px;height:40px;border-radius:50%;
@@ -534,6 +526,19 @@ a:hover{color:var(--gold)}
   background:rgba(201,169,97,0.08);
   box-shadow:0 0 0 1px rgba(201,169,97,0.25);
 }
+.pc2.linked{
+  border-color:rgba(201,169,97,0.45);
+  background:rgba(201,169,97,0.04);
+  position:relative;
+}
+.pc2.linked::after{
+  content:'5기 연임';
+  position:absolute;top:8px;right:8px;
+  font-size:9px;color:var(--gold);
+  background:rgba(13,27,51,0.7);
+  padding:2px 6px;border-radius:8px;
+  letter-spacing:0.05em;font-weight:600;
+}
 .p2e{
   font-size:11px;color:var(--gold);
   font-weight:700;letter-spacing:0.1em;
@@ -545,6 +550,61 @@ a:hover{color:var(--gold)}
   margin-bottom:4px;
 }
 .p2y{font-size:11px;color:var(--gray);letter-spacing:0.05em;}
+
+/* ========== 클럽 연혁 카드 (NEW v2.1) ========== */
+.club-history{
+  margin-top:36px;
+  background:rgba(13,27,51,0.55);
+  border:1px solid var(--line);
+  border-left:4px solid var(--gold);
+  border-radius:8px;
+  padding:28px 32px;
+  display:grid;
+  grid-template-columns:auto 1fr;
+  gap:28px;
+  align-items:start;
+}
+.club-history-icon{
+  font-size:32px;
+  width:54px;height:54px;
+  border-radius:50%;
+  background:rgba(201,169,97,0.12);
+  border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.club-history-body{flex:1;}
+.club-history-title{
+  font-family:var(--serif);
+  font-size:18px;font-weight:800;
+  color:var(--gold);
+  margin-bottom:14px;letter-spacing:-0.005em;
+}
+.club-history-list{
+  list-style:none;padding:0;margin:0;
+  display:grid;gap:9px;
+}
+.club-history-list li{
+  font-size:14px;color:var(--gray-light);
+  line-height:1.55;
+  padding-left:18px;position:relative;
+}
+.club-history-list li::before{
+  content:'▸';position:absolute;left:0;top:0;
+  color:var(--gold);font-size:11px;
+}
+.club-history-list li strong{color:var(--white);font-weight:600;}
+.club-history-list li em{
+  color:var(--gold);font-style:normal;font-weight:600;
+}
+@media (max-width:640px){
+  .club-history{
+    grid-template-columns:1fr;
+    padding:22px 20px;gap:16px;
+  }
+  .club-history-icon{margin:0 auto;}
+  .club-history-list li{font-size:13px;}
+}
 
 /* ========== FINALE ========== */
 .finale-wrap{max-width:1100px;margin:0 auto;padding:70px 20px 0;}
@@ -887,97 +947,6 @@ footer{
     </div>
   </div>
 
-  <!-- EP 시리즈 카드 (NEW) -->
-  <section class="ep-section">
-    <div class="ep-head">
-      <span class="num">EPISODES · 4편의 이야기</span>
-      <h2>20년을 4편의 영상으로</h2>
-      <p class="lead">시기별로 나눈 부송의 이야기. 각 편마다 사진 아카이브와 영상이 함께 합니다.</p>
-    </div>
-
-    <div class="ep-grid">
-      <a href="https://manminkim-eng.github.io/Busong-Club-20th-Ep01/" target="_blank" rel="noopener" class="ep-card">
-        <div class="ep-card-thumb">
-          <img src="https://img.youtube.com/vi/Jm6unX7WjmM/maxresdefault.jpg"
-               onerror="this.src='https://img.youtube.com/vi/Jm6unX7WjmM/hqdefault.jpg'"
-               alt="EP1 창립의 열정 썸네일" loading="lazy">
-          <div class="ep-card-num">EP. 01</div>
-          <div class="ep-card-dday">D-75</div>
-          <div class="ep-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="ep-card-body">
-          <div class="ep-card-title">창립의 열정</div>
-          <div class="ep-card-sub">2007 ~ 2010 · 시작과 창립</div>
-          <div class="ep-card-meta">
-            <span><strong>31</strong>장</span>
-            <span><strong>3:43</strong></span>
-            <span>2026.8.3 공개</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="https://manminkim-eng.github.io/Busong-Club-20th-Ep02/" target="_blank" rel="noopener" class="ep-card">
-        <div class="ep-card-thumb">
-          <img src="https://img.youtube.com/vi/3lhWBDD2hGc/maxresdefault.jpg"
-               onerror="this.src='https://img.youtube.com/vi/3lhWBDD2hGc/hqdefault.jpg'"
-               alt="EP2 함께 자란 시간 썸네일" loading="lazy">
-          <div class="ep-card-num">EP. 02</div>
-          <div class="ep-card-dday">D-60</div>
-          <div class="ep-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="ep-card-body">
-          <div class="ep-card-title">함께 자란 시간</div>
-          <div class="ep-card-sub">2011 ~ 2015 · 성장과 단합</div>
-          <div class="ep-card-meta">
-            <span><strong>58</strong>장</span>
-            <span><strong>3:33</strong></span>
-            <span>2026.8.18 공개</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="https://manminkim-eng.github.io/-Busong-Club-20th-Ep03/" target="_blank" rel="noopener" class="ep-card">
-        <div class="ep-card-thumb">
-          <img src="https://img.youtube.com/vi/tL6s1YjRWdE/maxresdefault.jpg"
-               onerror="this.src='https://img.youtube.com/vi/tL6s1YjRWdE/hqdefault.jpg'"
-               alt="EP3 역사를 잇다 썸네일" loading="lazy">
-          <div class="ep-card-num">EP. 03</div>
-          <div class="ep-card-dday">D-45</div>
-          <div class="ep-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="ep-card-body">
-          <div class="ep-card-title">역사를 잇다</div>
-          <div class="ep-card-sub">2016 ~ 2020 · 황금기와 계승</div>
-          <div class="ep-card-meta">
-            <span><strong>74</strong>장</span>
-            <span><strong>4:10</strong></span>
-            <span>2026.9.2 공개</span>
-          </div>
-        </div>
-      </a>
-
-      <a href="https://manminkim-eng.github.io/Busong-Club-20th-Ep04/" target="_blank" rel="noopener" class="ep-card">
-        <div class="ep-card-thumb">
-          <img src="https://img.youtube.com/vi/Oii_nDE8oGs/maxresdefault.jpg"
-               onerror="this.src='https://img.youtube.com/vi/Oii_nDE8oGs/hqdefault.jpg'"
-               alt="EP4 그래도 부송 썸네일" loading="lazy">
-          <div class="ep-card-num">EP. 04</div>
-          <div class="ep-card-dday">D-30</div>
-          <div class="ep-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        </div>
-        <div class="ep-card-body">
-          <div class="ep-card-title">그래도, 부송</div>
-          <div class="ep-card-sub">2021 ~ 2026 · 회복과 도약</div>
-          <div class="ep-card-meta">
-            <span><strong>75</strong>장</span>
-            <span><strong>4:05</strong></span>
-            <span>2026.9.17 공개</span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </section>
-
   <!-- TIMELINE -->
   <div class="tl-wrap">
     <div class="tl-head">
@@ -1002,11 +971,26 @@ footer{
         <div class="pc2"><div class="p2e">8기</div><div class="p2n">위성종</div><div class="p2y">2014</div></div>
         <div class="pc2"><div class="p2e">9기</div><div class="p2n">임재선</div><div class="p2y">2015</div></div>
         <div class="pc2"><div class="p2e">10기</div><div class="p2n">김기영</div><div class="p2y">2016</div></div>
-        <div class="pc2"><div class="p2e">11·12기</div><div class="p2n">김학정</div><div class="p2y">2017~2018</div></div>
+        <div class="pc2 linked"><div class="p2e">11·12기</div><div class="p2n">김학정</div><div class="p2y">2017~2018</div></div>
         <div class="pc2"><div class="p2e">13기</div><div class="p2n">전대순</div><div class="p2y">2019</div></div>
-        <div class="pc2"><div class="p2e">14~16기</div><div class="p2n">김학정</div><div class="p2y">2020~2022</div></div>
+        <div class="pc2 linked"><div class="p2e">14~16기</div><div class="p2n">김학정</div><div class="p2y">2020~2022</div></div>
         <div class="pc2"><div class="p2e">17·18기</div><div class="p2n">박상완</div><div class="p2y">2023~2024</div></div>
         <div class="pc2 cur"><div class="p2e">19·20기 ★</div><div class="p2n">김종왕</div><div class="p2y">2025~2026</div></div>
+      </div>
+
+      <!-- 클럽 연혁 및 특이사항 (PPT 슬라이드 2 기반) -->
+      <div class="club-history">
+        <div class="club-history-icon">📌</div>
+        <div class="club-history-body">
+          <div class="club-history-title">클럽 연혁 및 특이사항</div>
+          <ul class="club-history-list">
+            <li><strong>2007년 창립</strong> · 초대 회장 황영일</li>
+            <li>거점 · <strong>전북 익산 부송중학교</strong> 체육관 · 매주 월~금 정기 운동</li>
+            <li><strong>11·12기 김학정</strong> 회장 (2017~2018) · <strong>13기 전대순</strong> 회장 (2019)</li>
+            <li><em>14~16기 (2020~2022) · 김학정 회장 5기 연임</em> — 코로나 시기 부송을 지킨 굳건한 리더십</li>
+            <li><strong>2025~2026년 · 창립 20주년 기념</strong> (19·20기 김종왕 회장)</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -1082,6 +1066,93 @@ footer{
         <div class="shorts-desc">익산 부송 배드민턴 클럽과 함께 라켓을 들어보세요. 매주 월~금 정기 훈련.</div>
       </div>
     </a>
+  </section>
+
+  <!-- EP 시리즈 카드 (NEW) -->
+  <section class="ep-section">
+    <div class="ep-head">
+      <span class="num">EPISODE SERIES · 4편의 시리즈</span>
+      <h2>시기별로 더 깊이 보고 싶다면</h2>
+      <p class="lead">각 시기마다 별도의 사이트와 영상으로 부송의 이야기를 더 자세히 만나보세요.</p>
+    </div>
+
+    <div class="ep-grid">
+      <a href="https://manminkim-eng.github.io/Busong-Club-20th-Ep01/" target="_blank" rel="noopener" class="ep-card">
+        <div class="ep-card-thumb">
+          <img src="photos/ep1-thumb.jpg"
+               onerror="this.onerror=null;this.src='https://img.youtube.com/vi/Jm6unX7WjmM/hqdefault.jpg';"
+               alt="EP1 창립의 열정 썸네일" loading="lazy" decoding="async">
+          <div class="ep-card-num">EP. 01</div>
+          <div class="ep-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="ep-card-body">
+          <div class="ep-card-title">창립의 열정</div>
+          <div class="ep-card-sub">2007 ~ 2010 · 시작과 창립</div>
+          <div class="ep-card-meta">
+            <span><strong>31</strong>장</span>
+            <span><strong>3:43</strong></span>
+            <span>2026.8.3 공개</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://manminkim-eng.github.io/Busong-Club-20th-Ep02/" target="_blank" rel="noopener" class="ep-card">
+        <div class="ep-card-thumb">
+          <img src="photos/ep2-thumb.jpg"
+               onerror="this.onerror=null;this.src='https://img.youtube.com/vi/3lhWBDD2hGc/hqdefault.jpg';"
+               alt="EP2 함께 자란 시간 썸네일" loading="lazy" decoding="async">
+          <div class="ep-card-num">EP. 02</div>
+          <div class="ep-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="ep-card-body">
+          <div class="ep-card-title">함께 자란 시간</div>
+          <div class="ep-card-sub">2011 ~ 2015 · 성장과 단합</div>
+          <div class="ep-card-meta">
+            <span><strong>58</strong>장</span>
+            <span><strong>3:33</strong></span>
+            <span>2026.8.18 공개</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://manminkim-eng.github.io/-Busong-Club-20th-Ep03/" target="_blank" rel="noopener" class="ep-card">
+        <div class="ep-card-thumb">
+          <img src="photos/ep3-thumb.jpg"
+               onerror="this.onerror=null;this.src='https://img.youtube.com/vi/tL6s1YjRWdE/hqdefault.jpg';"
+               alt="EP3 역사를 잇다 썸네일" loading="lazy" decoding="async">
+          <div class="ep-card-num">EP. 03</div>
+          <div class="ep-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="ep-card-body">
+          <div class="ep-card-title">역사를 잇다</div>
+          <div class="ep-card-sub">2016 ~ 2020 · 황금기와 계승</div>
+          <div class="ep-card-meta">
+            <span><strong>74</strong>장</span>
+            <span><strong>4:10</strong></span>
+            <span>2026.9.2 공개</span>
+          </div>
+        </div>
+      </a>
+
+      <a href="https://manminkim-eng.github.io/Busong-Club-20th-Ep04/" target="_blank" rel="noopener" class="ep-card">
+        <div class="ep-card-thumb">
+          <img src="photos/ep4-thumb.jpg"
+               onerror="this.onerror=null;this.src='https://img.youtube.com/vi/Oii_nDE8oGs/hqdefault.jpg';"
+               alt="EP4 그래도 부송 썸네일" loading="lazy" decoding="async">
+          <div class="ep-card-num">EP. 04</div>
+          <div class="ep-card-play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        </div>
+        <div class="ep-card-body">
+          <div class="ep-card-title">그래도, 부송</div>
+          <div class="ep-card-sub">2021 ~ 2026 · 회복과 도약</div>
+          <div class="ep-card-meta">
+            <span><strong>75</strong>장</span>
+            <span><strong>4:05</strong></span>
+            <span>2026.9.17 공개</span>
+          </div>
+        </div>
+      </a>
+    </div>
   </section>
 
   <!-- 푸터 -->
