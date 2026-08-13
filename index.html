@@ -13,8 +13,8 @@
 <meta property="og:title" content="부송 배드민턴 클럽 | 20년의 한마음">
 <meta property="og:description" content="SINCE 2007 · 창립 20주년 기념 · 사진 81장 + 4편의 영상 시리즈 · 하나되는 우리, 승리하는 부송!">
 <meta property="og:image" content="https://manminkim-eng.github.io/Busong-Club-20th-Anniversary/og-image.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
 <meta property="og:image:alt" content="부송 배드민턴 클럽 20주년 기념 단체사진">
 <meta property="og:url" content="https://manminkim-eng.github.io/Busong-Club-20th-Anniversary/">
 <meta property="og:locale" content="ko_KR">
@@ -26,6 +26,9 @@
 <meta name="twitter:image" content="https://manminkim-eng.github.io/Busong-Club-20th-Anniversary/og-image.jpg">
 
 <meta name="theme-color" content="#0D1B33">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -224,6 +227,11 @@ a:hover{color:var(--gold)}
   100%{opacity:0;transform:translateY(-40px) translateX(var(--dx,20px));}
 }
 .hc{position:relative;z-index:2;text-align:center;padding:20px;}
+img.i-shuttle{display:block;width:104px;height:104px;margin:0 auto 22px;animation:floatE 3.2s ease-in-out infinite}
+@keyframes floatE{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.hero-emblem{display:block;width:132px;height:132px;margin:0 auto 22px;animation:up .8s ease .1s both}
+.hero-watermark{position:absolute;right:-70px;bottom:-90px;width:340px;height:340px;opacity:.07;z-index:0;pointer-events:none;user-select:none}
+@media (max-width:640px){.hero-emblem{width:94px;height:94px;margin-bottom:18px}img.i-shuttle{width:78px;height:78px}.hero-watermark{width:240px;height:240px;right:-60px;bottom:-70px}}
 .h-badge{
   display:inline-flex;align-items:center;gap:8px;
   border:2px solid var(--gold);
@@ -907,7 +915,7 @@ footer{
 
 <!-- INTRO 풀스크린 -->
 <div id="intro">
-  <div class="i-shuttle">🏸</div>
+  <img class="i-shuttle" src="assets/emblem-open.png" alt="익산 부송 배드민턴 클럽 엠블럼">
   <div class="i-title">20년의 한마음<br>부송의 이야기</div>
   <div class="i-sub">Busong Badminton Club · 2007 — 2026</div>
   <div class="i-line"></div>
@@ -927,9 +935,11 @@ footer{
 
   <!-- HERO -->
   <header class="hero">
+    <img class="hero-watermark" src="assets/emblem-open.png" alt="" aria-hidden="true">
     <div class="hero-pts" id="pts"></div>
     <div class="hc">
-      <div class="h-badge">🏸 SINCE 2007 · 창립 20주년 기념</div>
+      <img class="hero-emblem" src="assets/emblem-open.png" alt="익산 부송 배드민턴 클럽 엠블럼">
+      <div class="h-badge">SINCE 2007 · 창립 20주년 기념</div>
       <h1 class="h-main"><span class="hl">부송</span> 배드민턴 클럽</h1>
       <div class="h-desc">20년의 땀과 웃음, 그 아름다운 기록</div>
       <div class="h-slogan">하나되는 우리!&nbsp;&nbsp;승리하는 부송!</div>
